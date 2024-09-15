@@ -1,0 +1,5 @@
+Kjør lokal postgres
+docker run --name postgres-local -e POSTGRES_PASSWORD=password -d -p 5432 postgres:12.20-alpine
+
+Finn lokal port
+docker port postgres-local
