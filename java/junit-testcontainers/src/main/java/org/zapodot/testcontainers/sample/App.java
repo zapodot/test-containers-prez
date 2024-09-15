@@ -21,6 +21,7 @@ import static org.zapodot.testcontainers.sample.db.NamedParameterJdbcTemplateFac
 
 public class App {
     private static final Logger LOGGER = org.slf4j.LoggerFactory.getLogger(App.class);
+
     // This class is not meant to be instantiated
     private App() {
     }
@@ -47,7 +48,10 @@ public class App {
                         .forEach(userWithRoles ->
                                 userWriteRepository.save(
                                         userWithRoles.name(),
-                                        userWithRoles.roles().stream().map(key -> Objects.requireNonNull(allRoles.get(key.trim().toLowerCase()), "Fant ingen rolle som heter " + key)).collect(Collectors.toList())));
+                                        userWithRoles.roles().stream()
+                                                .map(key -> Objects.requireNonNull(
+                                                        allRoles.get(key.trim().toLowerCase()), "Fant ingen rolle som heter " + key))
+                                                .collect(Collectors.toList())));
             } catch (RuntimeException e) {
                 LOGGER.error("Feil under lagring av brukere. Ruller tilbake", e);
                 status.setRollbackOnly();
