@@ -28,10 +28,19 @@ footer: 'Javabin Bergen 19/9-2024'
 ### Hva er en container?
 [![width:1000](assets/oci.png)](https://github.com/opencontainers/image-spec/releases/download/v1.1.0/oci-image-spec-v1.1.0.pdf)
 Kilde: *Open Container Initiative Image spec v 1.1.0*
+<!--
+OCI - specen definerer et image som summen av lag, index og config. Et container image skal kunne kjøre isolert og skal kun ha tilgang til bibliotek og kommandoer som er lagt inn i imaget 
+-->
 
 ---
 ![width:1000](assets/docker-architecture.png)
-Kilde: *[Docker overview](https://docs.docker.com/get-started/docker-overview/)*
+Kilde: *[Docker overview]
+(https://docs.docker.com/get-started/docker-overview/)*
+
+<!--
+Docker er den mest kjente container runtime brukt lokalt på utviklermaskiner og servere. Støtter også OCI. Docker Desktop er propritært mens selve dockerd er opensource. Et OpenSource alternativ er Podman Desktop 
+Kubernetes bygger også på bruk av container images definert i henhold til OCI-standarden 
+ -->
 
 ---
 ![image](https://testcontainers.com/getting-started/images/test-workflow.png)
@@ -40,20 +49,40 @@ Kilde: *[Docker overview](https://docs.docker.com/get-started/docker-overview/)*
 ---
 
 ### Hva menes med test?
+>Kode som kjører som en del av standard bygging av et kodeprosjekt som tester ulike utfall som kan gjøres med produksjonskoden
+
 ---
+
+### Ulike former for tester
+- _enhetstest_ - tester en enkelt funksjon eller klasse. Fokus på f.eks grenseverdier. Mock-er alle avhengigheter
+- _komponenttest_ - blackbox testing av en enkelt komponent. Mocker typisk alle eksterne komponenter
+- _integrasjonstest_ - tester som fokuserer på grensesnittet mellom egen kode og tredjepart
+
+---
+
 
 ### Hvordan gjorde vi dette før?
 - Testet mot faktisk test/produksjonsmiljø
 - Kjørte mocks/stubs som lot deg dekke en del av behovet (f.eks H2Database i kompabilitetsmodus)
+
 ---
+
 ## Funksjonalitet
+- Støtter både Docker (Desktop) og Podman
+- Kan også bruke _Testcontainers cloud_
+
+---
 ### Kjøre testkode mot enkelt container
 #### Eksempel Java/JUnit
 #### Eksempel Kotlin/Kotest
 #### Eksempel C#
+
+---
 ### Koble sammen containere
 #### Eksempel Java/JUnit
 #### Eksempel Kotlin/Kotest
+
+---
 ### Kjøre containere i sky
 #### Trenger ikke ha Docker eller Podman installert
 #### Pay-as-you-go modell
