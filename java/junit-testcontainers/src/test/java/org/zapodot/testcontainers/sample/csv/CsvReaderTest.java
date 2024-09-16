@@ -24,7 +24,7 @@ class CsvReaderTest {
         );
         assertThat(usersWithRoles.get(1)).satisfies(userWithRoles -> {
                     assertThat(userWithRoles.name()).isEqualTo("Anna");
-                    assertThat(userWithRoles.roles()).containsExactlyInAnyOrder("Developer", "Role administator");
+                    assertThat(userWithRoles.roles()).containsExactlyInAnyOrder("Developer", "Role administrator");
                 }
         );
     }

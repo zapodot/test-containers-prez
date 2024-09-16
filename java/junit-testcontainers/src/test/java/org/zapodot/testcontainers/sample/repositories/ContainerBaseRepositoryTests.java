@@ -18,8 +18,6 @@ import org.zapodot.testcontainers.sample.repositories.write.RoleWriteRepository;
 import org.zapodot.testcontainers.sample.repositories.write.UserWriteRepository;
 
 import javax.sql.DataSource;
-
-import java.util.List;
 import java.util.stream.StreamSupport;
 
 import static org.assertj.core.api.Assertions.assertThat;
