@@ -26,6 +26,7 @@
         <jakarta.annotation.version>3.0.0</jakarta.annotation.version>
         <jcommander.version>2.0</jcommander.version>
         <junit.version>5.11.0</junit.version>
+        <ktor.version>2.3.12</ktor.version>
         <kotest-extensions-testcontainers.version>2.0.2</kotest-extensions-testcontainers.version>
         <kotest.version>5.9.1</kotest.version>
         <kotlin-logging.version>3.0.5</kotlin-logging.version>
@@ -101,6 +102,13 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-bom</artifactId>
                 <version>${slf4j.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.ktor</groupId>
+                <artifactId>ktor-bom</artifactId>
+                <version>${ktor.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
