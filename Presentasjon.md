@@ -1,15 +1,17 @@
 ---
 marp: true
-theme: uncover
+theme: rose-pine
 paginate: true
 _paginate: false
 transition: fade
 ---
-# Testcontainers
-
-Presentasjon Javabin Bergen 19/9-2024
-Sondre Eikanger Kvalø - Sonat Consulting Bergen
-@zapodot https://github.com/zapodot
+# <!--fit -->Testcontainers
+Javabin Bergen 19/9-2024
+Sondre Eikanger Kvalø
+Sonat Consulting Bergen
+@zapodot
+ https://github.com/zapodot/test-containers-prez
+![bg 30% right](assets/qrcode.png)
 
 ---
 <!-- 
@@ -41,10 +43,6 @@ Kilde: *[Docker overview]
 Docker er den mest kjente container runtime brukt lokalt på utviklermaskiner og servere. Støtter også OCI. Docker Desktop er propritært mens selve dockerd er opensource. Et OpenSource alternativ er Podman Desktop 
 Kubernetes bygger også på bruk av container images definert i henhold til OCI-standarden 
  -->
-
----
-![image](https://testcontainers.com/getting-started/images/test-workflow.png)
-
 
 ---
 
@@ -108,12 +106,18 @@ Om vi bare kjører integrasjonstester er det lett å glemme dette aspektet
     - embedded runtime basert på Alpine Linux (eksperimentell)
     - _Testcontainers cloud_
 ---
+
 ### Kjøre containere i sky
 - Trenger ikke ha en container runtime installert
 - Pay-as-you-go modell
 - Kanskje mest nyttig i CI-sammenheng?
 - Etter at _Docker Inc_ kjøpte opp _Atomic Jar_ som laget _Testcontainers_ kan vi anta at det vil henge sammen med deres cloud-løsning
 ---
+### Livssyklus til testcontainere
+![width:100%](https://testcontainers.com/getting-started/images/test-workflow.png)
+
+---
+
 ### Funksjonalitet
 - Kan brukes fra ulike språk og med ulike testrammeverk, f.eks:
     - Java (_JUnit_ 4/5 eller _Spock_)
